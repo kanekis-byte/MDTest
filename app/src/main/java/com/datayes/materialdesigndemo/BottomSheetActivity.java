@@ -8,6 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 
+import com.tmall.ultraviewpager.UltraViewPager;
+
 /**
  * BottomSheetBehavior测试
  * Created by hongfei.tao on 2017/9/18.
@@ -15,12 +17,20 @@ import android.view.View;
 public class BottomSheetActivity extends AppCompatActivity implements View.OnClickListener {
 
     private BottomSheetBehavior<View> mBehavior;
+    private UltraViewPager mViewPager;
+    private UltraPagerAdapter mPagerAdapter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bottom_sheet);
-        findViewById(R.id.tv_bottomSheetLayout).setOnClickListener(this);
+        mViewPager = (UltraViewPager) findViewById(R.id.vp_bottomSheetHeader);
+        mViewPager.setOnClickListener(this);
+        mViewPager.setScrollMode(UltraViewPager.ScrollMode.VERTICAL);
+        mPagerAdapter = new UltraPagerAdapter();
+        mViewPager.setAdapter(mPagerAdapter);
+        mViewPager.setAutoScroll(5000);
+        mViewPager.setInfiniteLoop(true);
 
         View bottomSheet = findViewById(R.id.rl_bottom_sheet_layout);
         mBehavior = BottomSheetBehavior.from(bottomSheet);

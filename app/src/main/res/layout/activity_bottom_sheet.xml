@@ -39,7 +39,13 @@
         app:behavior_skipCollapsed="false"
         app:layout_behavior="@string/bottom_sheet_behavior">
 
-        <TextView
+        <com.tmall.ultraviewpager.UltraViewPager
+            android:id="@+id/vp_bottomSheetHeader"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:background="#f4f5f9" />
+
+        <!--<TextView
             android:id="@+id/tv_bottomSheetLayout"
             android:layout_width="match_parent"
             android:layout_height="25dp"
@@ -48,7 +54,7 @@
             android:text="Title Bar"
             android:textAllCaps="false"
             android:textColor="@color/colorPrimaryDark"
-            android:textSize="16sp" />
+            android:textSize="16sp" />-->
 
         <View
             android:layout_width="wrap_content"
