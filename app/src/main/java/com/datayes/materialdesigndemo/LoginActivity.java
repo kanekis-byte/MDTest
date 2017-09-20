@@ -6,6 +6,7 @@ import android.annotation.TargetApi;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
+import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.app.LoaderManager.LoaderCallbacks;
 
@@ -92,6 +93,9 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
+
+        TextInputLayout mPwdLayout = (TextInputLayout) findViewById(R.id.pwd_layout);
+        mPwdLayout.setPasswordVisibilityToggleDrawable(R.drawable.pwd_img);
     }
 
     private void populateAutoComplete() {

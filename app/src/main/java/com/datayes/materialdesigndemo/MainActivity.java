@@ -18,14 +18,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void jumpLogin(View view) {
-//        startActivity(new Intent(this, LoginActivity.class));
-        if (mSheetDialog == null) {
+        startActivity(new Intent(this, LoginActivity.class));
+        /*if (mSheetDialog == null) {
             mSheetDialog = new BottomSheetDialog(this);
             mSheetDialog.setContentView(R.layout.dialog_share_layout);
         }
 
         if (!mSheetDialog.isShowing())
-            mSheetDialog.show();
+            mSheetDialog.show();*/
 
     }
 
