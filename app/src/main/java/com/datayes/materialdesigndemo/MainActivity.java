@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.animation.AnimationUtils;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private BottomSheetDialog mSheetDialog;
 
@@ -15,6 +15,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        findViewById(R.id.button3).setOnClickListener(this);
     }
 
     public void jumpLogin(View view) {
@@ -31,5 +33,14 @@ public class MainActivity extends AppCompatActivity {
 
     public void jumpBottomSheet(View view) {
         startActivity(new Intent(this, BottomSheetActivity.class));
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.button3:
+                startActivity(new Intent(this, NavigationActivity.class));
+                break;
+        }
     }
 }
